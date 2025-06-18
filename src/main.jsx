@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Navbar />
-      <main className='h-screen'>
+      <main className='h-screen p-8'>
         <Routes>
           <Route path='/' element={<App />} />
           <Route path='/login' element={<Login />} />
