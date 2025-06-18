@@ -11,11 +11,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-      </Routes>
+      <main className='h-screen'>
+        <Routes>
+          <Route path='/' element={<App />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   </React.StrictMode>,
 )
