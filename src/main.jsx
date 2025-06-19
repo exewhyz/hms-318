@@ -11,7 +11,7 @@ import Navbar from "./components/Navbar.jsx"
 import Booking from './pages/Booking.jsx';
 import Prescriptions from './pages/Prescriptions.jsx';
 
-import { AuthProvider } from './context/authContext.js';
+import { AuthProvider } from './context/authContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

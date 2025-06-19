@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../context/authContext.jsx';
 
 export default function Login() {
 
-    const handleSubmit = (e) => {
+    // const auth = useAuth()
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert("Logged In")
+        // await login();
     }
 
     return (
@@ -15,9 +18,11 @@ export default function Login() {
                 <input type="email" placeholder='email@example.com' className='border border-gray-400 p-2 w-full rounded' />
                 <input type="password" placeholder='password' className='border border-gray-400 p-2 w-full rounded' />
                 <button
+                    // disabled={loading}
                     type='submit'
                     className='px-4 py-1 w-full text-white rounded bg-blue-500 '
                 >
+                    {/* {loading ? "Logging In" : Login} */}
                     Login
                 </button>
                 <Link to={"/register"} className='text-sm text-gray-400 hover:text-gray-500'>
