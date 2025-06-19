@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from "./components/Card.jsx"
+import { useAuth } from './context/authContext.js'
 
 export default function App() {
   const appointments = [
@@ -29,13 +30,14 @@ export default function App() {
   return (
     <div className='flex flex-col gap-8'>
       <section>
+
         <h1 className='font-bold text-4xl'>Upcoming Appointments</h1>
         <div className='flex flex-wrap gap-6 p-6'>
           {
             upcommingAppointments.map((appt) => {
               return (
-                <Card 
-                  key={appt.id} 
+                <Card
+                  key={appt.id}
                   doctor={appt.doctor}
                   date={appt.date}
                   time={appt.time}
@@ -51,8 +53,8 @@ export default function App() {
           {
             pastAppointments.map((appt) => {
               return (
-                <Card 
-                  key={appt.id} 
+                <Card
+                  key={appt.id}
                   doctor={appt.doctor}
                   date={appt.date}
                   time={appt.time}
