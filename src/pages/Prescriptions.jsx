@@ -1,25 +1,9 @@
 import React from 'react'
+import { useData } from '../context/dataContext'
 
 export default function Prescriptions() {
 
-    const prescriptions = [
-        {
-            id: 1,
-            doctor: "Dr. Abhishek",
-            details: "bidjhffhmugik"
-        },
-        {
-            id: 2,
-            doctor: "Dr. Harshvardhan",
-            details: "mugidsjfdsk"
-        },
-        {
-            id: 3,
-            doctor: "Dr. Akarshan",
-            details: "urefhojpe'wl"
-        }
-    ]
-
+    const { prescriptions } = useData();
 
     return (
         <div className=''>

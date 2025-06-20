@@ -1,28 +1,9 @@
 import React from 'react'
 import Card from "../components/Card.jsx"
-import { useAuth } from '../context/authContext.jsx'
+import { useData } from '../context/dataContext.jsx'
 
 export default function Home() {
-    const appointments = [
-        {
-            id: 1,
-            doctor: "Dr. Abhishek",
-            date: "2025-05-24",
-            time: "10:20 AM"
-        },
-        {
-            id: 2,
-            doctor: "Dr. Akarshan",
-            date: "2025-09-24",
-            time: "10:20 AM"
-        },
-        {
-            id: 3,
-            doctor: "Dr. Harshvardhan",
-            date: "2025-10-24",
-            time: "10:30 AM"
-        }
-    ]
+    const { appointments } = useData();
 
     const upcommingAppointments = appointments.filter(((appt) => new Date(appt.date) > Date.now()))
     const pastAppointments = appointments.filter(((appt) => new Date(appt.date) < Date.now()))

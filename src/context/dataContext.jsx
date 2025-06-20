@@ -48,6 +48,7 @@ export const DataProvider = ({ children }) => {
     const [loadingData, setLoadingData] = useState(false);
     const [errorData, setErrorData] = useState(null);
 
+    
 
     const addAppointment = async (appt) => {
         try {
