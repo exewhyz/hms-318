@@ -21,7 +21,7 @@ export default function Register() {
         })
     }
 
-    const { register, loading, isAuthenticated } = useAuth();
+    const { register, loading, error, isAuthenticated } = useAuth();
     const redirect = useNavigate();
 
     useEffect(() => {
@@ -54,6 +54,7 @@ export default function Register() {
                 <Link to={"/login"} className='text-sm text-gray-400 hover:text-gray-500'>
                     Already have an Account, Login!
                 </Link>
+                {error && <p className='text-red-400 font-semibold tex-sm'>{error}</p>}
             </form>
         </div>
     )

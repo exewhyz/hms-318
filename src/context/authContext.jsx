@@ -16,6 +16,7 @@ export const AuthProvider = ({ children }) => {
     const login = (email, password) => {
         try {
             setLoading(true);
+            setError(null)
             //fetch api call
             const mockUser = {
                 id: Date.now(),
@@ -33,10 +34,15 @@ export const AuthProvider = ({ children }) => {
             setLoading(false)
         }
     }
-    const register = (user) => {
+    const register = (userData) => {
         try {
             setLoading(true);
+            setError(null);
             //fetch api call
+            if (userData.password !== userData.cPassword) {
+                setError("Password and Confirm Password not matched")
+                throw new Error("Password and Confirm Password not matched")
+            }
             const mockUser = {
                 id: Date.now(),
                 ...user
